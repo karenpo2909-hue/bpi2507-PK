@@ -2,14 +2,14 @@ package edu.course.lab02;
 
 public class ProjectTask {
 
-    private final String id;
+    private final TaskId id;
     private final String title;
     private TaskStatus status;
     private int estimatedHours;
 
-    public ProjectTask(String id, String title, int estimatedHours) {
-        if (id == null || id.isBlank()) {
-            throw new IllegalArgumentException("id must not be null or blank");
+    public ProjectTask(TaskId id, String title, int estimatedHours) {
+        if (id == null) {
+            throw new IllegalArgumentException("id must not be null");
         }
         if (title == null || title.isBlank()) {
             throw new IllegalArgumentException("title must not be null or blank");
@@ -42,7 +42,7 @@ public class ProjectTask {
         this.estimatedHours += hours;
     }
 
-    public String getId() {
+    public TaskId getId() {
         return id;
     }
 
